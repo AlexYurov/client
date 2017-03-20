@@ -13,6 +13,16 @@ declare interface TaskInfo {
     IoReadOperationsPerSec: number
 }
 
+declare interface ServiceInfo {
+    ServiceName: string,
+    DisplayName: string,
+    ServiceType: number,
+    StartType: string,
+    Status: string,
+    CanStop: boolean,
+    CanPauseAndContinue: boolean
+}
+
 /*{
     "cpuUsage":[9.481993,6.41368246,6.30547667,0.09315314],
     "totalMemory":17126731776,

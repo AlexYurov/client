@@ -4,6 +4,7 @@
 //import {cameraActions} from "./action/camera-actions"
 import {
     taskActions, 
+    serviceActions,
     systemActions, 
     messageActions, 
     cameraActions,

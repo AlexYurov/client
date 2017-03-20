@@ -3,6 +3,7 @@
 export * from "./components"
 export * from "./system"
 export * from "./tasks"
+export * from "./services"
 export * from "./camera"
 export * from "./login"
 export * from "./settings"

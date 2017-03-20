@@ -5,11 +5,13 @@ import {
     Bars,
     UserWidget,
     TaskList,
+    ServiceList,
     Stats,
     Overlay,
     
     CameraPage,
     TaskPage,
+    ServicePage,
     SystemPage,
     ModalSettings,
     FilePage,
@@ -31,7 +33,7 @@ import {TerminalPage} from "./terminal"
 import {ScreenPage} from "./screen"
 import {ScriptPage} from "./script"
 import {ServerLogPage} from "./server-log"
-import {taskStore, appStore, AppState, userStore, UserState} from "../store"
+import {taskStore, serviceStore, appStore, AppState, userStore, UserState} from "../store"
 import setIntervals from "../interval"
 import {Router, IndexRoute, Route, Link, hashHistory} from 'react-router'
 import {Glyphicon, Button} from "react-bootstrap"
@@ -55,6 +57,7 @@ function newPage(route: string, label: string, icon: string, component: React.Re
 
 const pages: Page[] = [
     ["/tasks", "Task Manager", "task.svg", TaskPage],
+    ["/services", "Service Manager", "task.svg", ServicePage],
     ["/info", "System Information", "stats.svg", SystemPage],
     ["/cameras", "Cameras", "camera.svg", CameraPage],
     ["/filesystem", "Filesystem", "filesystem.svg", FilePage],
@@ -106,6 +109,7 @@ export default class App extends React.Component<{
 }> {
     pathMap = {
         "/tasks": "Task Manager",
+        "/services": "Service Manager",
         "/info": "System Information",
         "/cameras": "Cameras",
         "/filesystem": "Filesystem",
@@ -371,6 +375,7 @@ class Sidebar extends React.Component<{
 const routes = <Route path="/" component={App}>
             <IndexRoute component={TaskPage} />
             <Route path="tasks" component={TaskPage} />
+            <Route path="services" component={ServicePage} />
             <Route path="info" component={SystemPage} />
             <Route path="cameras" component={CameraPage} />
             <Route path="filesystem" component={FilePage} />
