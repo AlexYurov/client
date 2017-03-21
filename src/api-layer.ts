@@ -103,6 +103,12 @@ export let processApi = {
     }
 }
 
+export let serviceApi = {
+    getServices() {
+        sendCommandToDefault("requestServiceInformation")
+    }
+}
+
 export let systemApi = {
     getStats() {
         return sendCommandToDefault("requestsysteminformation")
@@ -118,6 +124,10 @@ export let systemApi = {
 export function requestProcessInformation(tasks: TaskInfo[]) {
     if (resLog) console.log("Tasks get")
     taskActions.updateTasks(tasks)
+}
+export function requestServiceInformation(services: ServiceInfo[]) {
+    if (resLog) console.log("Services get")
+    serviceActions.updateServices(services)
 }
 
 export function requestsysteminformation(stats: SystemInfo) {

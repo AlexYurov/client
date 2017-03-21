@@ -15,6 +15,7 @@ export default function setIntervals() {
     let intervals: {[key: string]: number}
     intervals = setCommandIntervals([
         command("requestprocessinformation", 5000),
+        command("requestserviceinformation", 10000),
         command("requestSystemInformation", 1000),
     ])
     return intervals

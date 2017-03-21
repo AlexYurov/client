@@ -46,8 +46,8 @@ export class ServiceList extends React.Component<
             return <span>{this.columns[property]}</span>
         }
     }
-    onChange(tasks) {
-        this.setState(tasks)
+    onChange(services) {
+        this.setState(services)
     }
     setSort(prop: string) {
         if (this.state.sortProperty == prop) {
@@ -60,13 +60,8 @@ export class ServiceList extends React.Component<
     render() {
         if (this.state.services.length == 0) {
             return <LoadingScreen>
-                Loading task list
+                Loading services
             </LoadingScreen>
-            /*
-            return (
-                <p>Loading task list; hang on pleaaase...</p>
-            )
-            */
         }
         if (this.state.sortProperty.length > 0) {
             this.state.services.sort(createSortOnProperty<ServiceInfo>(this.state.sortProperty, this.state.sortType))
@@ -75,7 +70,6 @@ export class ServiceList extends React.Component<
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th>Icon</th>
                         <th className="task-name-head" onClick={() => this.setSort("ServiceName")}>
                             {this.getName("ServiceName")}
                         </th>
@@ -88,6 +82,7 @@ export class ServiceList extends React.Component<
                         <th className="task-name-head" onClick={() => this.setSort("Status")}>
                             {this.getName("Status")}
                         </th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>

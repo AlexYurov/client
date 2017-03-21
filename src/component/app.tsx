@@ -57,7 +57,7 @@ function newPage(route: string, label: string, icon: string, component: React.Re
 
 const pages: Page[] = [
     ["/tasks", "Task Manager", "task.svg", TaskPage],
-    ["/services", "Service Manager", "task.svg", ServicePage],
+    ["/services", "Service Manager", "stats.svg", ServicePage],
     ["/info", "System Information", "stats.svg", SystemPage],
     ["/cameras", "Cameras", "camera.svg", CameraPage],
     ["/filesystem", "Filesystem", "filesystem.svg", FilePage],
